@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Página Principal
+    Contacto
 @endsection
 
 @section('contenido')
-    Contenido de esta Página
+    Contactanos por Einstagram
 @endsection
