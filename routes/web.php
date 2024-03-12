@@ -8,4 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/registro', [RegisterController ::class, 'index']);
+Route::post('/registro', [RegisterController ::class, 'store']);
 
