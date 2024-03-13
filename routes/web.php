@@ -7,6 +7,6 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/registro', [RegisterController ::class, 'index']);
+Route::get('/registro', [RegisterController ::class, 'index'])-> name('register');
 Route::post('/registro', [RegisterController ::class, 'store']);
 

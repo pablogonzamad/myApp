@@ -11,14 +11,22 @@
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="/registro" method="POST">
+            <form action="{{route('register')}}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         Nombre
                     </label>
                     <input id="name" name="name" type="text" placeholder="Tu Nombre"
-                            class="border p-3 w-full rounded-lg">
+                            class="border p-3 w-full rounded-lg 
+                            @error('name') border-red-500
+                            @enderror"
+                            value={{old('name')}}>
+                    
+                    @error('name')
+                        <p class="text-red-700">*{{$message}}</p>
+                    @enderror        
+                            
                 </div>
 
                 <div class="mb-5">
@@ -27,6 +35,10 @@
                     </label>
                     <input id="username" name="username" type="text" placeholder="Tu Nombre de Usuario"
                             class="border p-3 w-full rounded-lg">
+
+                    @error('username')
+                        <p class="text-red-700">*{{$message}}</p>
+                    @enderror         
                 </div>
 
                 <div class="mb-5">
@@ -35,6 +47,10 @@
                     </label>
                     <input id="email" name="email" type="email" placeholder="Tu Direccion de Correo"
                             class="border p-3 w-full rounded-lg">
+
+                    @error('email')
+                        <p class="text-red-700">*{{$message}}</p>
+                    @enderror             
                 </div>
 
                 <div class="mb-5">
@@ -43,6 +59,10 @@
                     </label>
                     <input id="password" name="password" type="password" placeholder="Tu Contraseña"
                             class="border p-3 w-full rounded-lg">
+
+                    @error('password')
+                        <p class="text-red-700">*{{$message}}</p>
+                    @enderror 
                 </div>
 
                 <div class="mb-5">

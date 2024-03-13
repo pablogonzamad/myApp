@@ -19,7 +19,7 @@
 
                 <nav class="flex gap-2 items-center">
                     <a class="font-bold uppercase text-gray-600 text-sm" href="#">Acceder</a>
-                    <a class="font-bold uppercase text-gray-600 text-sm" href="/registro">Registrarse</a>
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register')}}">Registrarse</a>
                 </nav>
 
             </div>
