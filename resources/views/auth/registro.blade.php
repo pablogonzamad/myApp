@@ -34,7 +34,10 @@
                         Username
                     </label>
                     <input id="username" name="username" type="text" placeholder="Tu Nombre de Usuario"
-                            class="border p-3 w-full rounded-lg">
+                    class="border p-3 w-full rounded-lg 
+                        @error('username') border-red-500
+                        @enderror"
+                        value={{old('username')}}>
 
                     @error('username')
                         <p class="text-red-700">*{{$message}}</p>
@@ -46,7 +49,10 @@
                         Correo Electrónico
                     </label>
                     <input id="email" name="email" type="email" placeholder="Tu Direccion de Correo"
-                            class="border p-3 w-full rounded-lg">
+                        class="border p-3 w-full rounded-lg 
+                        @error('email') border-red-500
+                        @enderror"
+                        value={{old('email')}}>
 
                     @error('email')
                         <p class="text-red-700">*{{$message}}</p>
@@ -58,7 +64,9 @@
                         Contraseña
                     </label>
                     <input id="password" name="password" type="password" placeholder="Tu Contraseña"
-                            class="border p-3 w-full rounded-lg">
+                        class="border p-3 w-full rounded-lg 
+                        @error('password') border-red-500
+                        @enderror">
 
                     @error('password')
                         <p class="text-red-700">*{{$message}}</p>
@@ -69,7 +77,7 @@
                     <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
                         Repetir Contraseña
                     </label>
-                    <input id="password_confirmation" name="password_confirmation" type="text" placeholder="Repite tu Contraseña"
+                    <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Repite tu Contraseña"
                             class="border p-3 w-full rounded-lg">
                 </div>
 
